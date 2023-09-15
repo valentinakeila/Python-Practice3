@@ -2,7 +2,7 @@
 
 from math import pi
 
-
+ 
 class Circle:
     """Todo cículo tiene un radio y se desea conocer tanto el área como el
     perímetro (longitud de circunferencia).
@@ -15,7 +15,7 @@ class Circle:
         - No utilizar variable de clase
         - No utilizar Dataclasses
         - No utilizar Properties
-        - Utilizar Type Hints en todos los métodos y variables
+        - Utilizar Type Hints en todos los métodos y variables hhhh
     """
 
 
