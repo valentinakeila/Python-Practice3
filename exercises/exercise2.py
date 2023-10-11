@@ -20,7 +20,11 @@ class Article:
         - No utilizar Properties
         - Utilizar Type Hints en todos los métodos y variables
     """
-
+    def __init__(self, valorNombre: str, valorCosto: float): #valores que ingresa el usuario
+        self.nombre = valorNombre  #ponemos el self para que reconozca que es un atributo del objeto osea que esta dentro de la clase y no es una variable cualquiera 
+        self.costo = valorCosto #variable de instancia
+        self.descuento = 0 #se puede declara un atributo con un valor fijo sin pedirle al usuario
+    
 
 # NO MODIFICAR - INICIO
 # Test parámetro obligatorio
