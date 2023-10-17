@@ -23,16 +23,16 @@ class Article:
     #variable de clase
     iva = 0.21
     #constructor
-    def __init__(self, nombre: str, costo: float, descuento: float = 0): #valores que ingresa el usuario
+    def __init__(self, nombre: str, costo: float): #valores que ingresa el usuario
         self.nombre = nombre  #ponemos el self para que reconozca que es un atributo del objeto osea que esta dentro de la clase y no es una variable cualquiera 
         self.costo = costo #variable de instancia
-        self.descuento = descuento #se puede declara un atributo con un valor fijo sin pedirle al usuario
+        self.descuento = 0 #se puede declara un atributo con un valor fijo sin pedirle al usuario
     
     #metodo de instancia
     def calcular_precio(self) -> float:
-        precioDesc = self.costo - self.descuento
-        precioIva = precioDesc * (1 + self.iva)
-        return round(precioIva, 2)
+        precioNoDesc = self.costo * (1 + self.iva)
+        precioDesc = precioNoDesc - self.descuento
+        return round(precioDesc, 2)
     
     @classmethod
     def actualizar_iva(cls, nuevo_iva: float):
