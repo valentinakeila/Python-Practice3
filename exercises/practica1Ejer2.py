@@ -107,6 +107,10 @@ class Usuario(Persona):
         if usuario == self.username and password == self.password:
             login_correcto = True
         print(login_correcto)
+
+    def baja_usuario(self):
+        self.fecha_baja = datetime.today()
+        self.estado = False
     
 primer_usuario = Usuario("Nico","Cataldi",21,2002,3,20,"ElNico","mimail@mio.com","12346")
 
