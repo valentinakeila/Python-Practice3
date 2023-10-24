@@ -39,8 +39,32 @@ class Usuario:
         self.__fecha_baja = date.today()
 
     @property
+    def estado(self):
+        return self.__estado
+
+    @estado.setter
+    def estado(self,valor: bool):
+        self.__estado = valor
+
+    @property
+    def fecha_baja(self):
+        return self.__fecha_baja
+
+    @fecha_baja.setter
+    def fecha_baja(self,valor: bool):
+        self.__fecha_baja = valor
+
+    @property
     def nombre(self):
         return self.__nombre
+
+    @property
+    def email(self):
+        return self.__email
+
+    @email.setter
+    def email(self,valor):
+        self.__email = valor
     
     @nombre.setter
     def nombre(self, nuevoNombre: str):
@@ -72,13 +96,49 @@ class Usuario:
 
 #---------------------------------------------------
 
-nuevo_usuario = Usuario("Valen", "valen@gmail.com", "1234")#estas poniendo nuevo_usuario porque estas instanciando la clase para usarla despues con los prints estas pasando los parametros entre ()
-# print(nuevo_usuario.__username) esto no se puede hacer porque es un atributo privado
-print(nuevo_usuario.userName) # aca llamas al getter osea userName
-"""nuevo_usuario.userName = "Nico" #si le pasas parametros llamas al setter (eso se llama sobrecarga de metodos creo)"""""""""
-"""print(nuevo_usuario.userName)""" #si no manda parametros llama al getter
 
-nueva_contraseña = input("Ingrese una contraseña\n") 
-nuevo_usuario.password = nueva_contraseña 
-print(nuevo_usuario.password)
+# nuevo_usuario = Usuario("Valen", "valen@gmail.com", "1234")#estas poniendo nuevo_usuario porque estas instanciando la clase para usarla despues con los prints estas pasando los parametros entre ()
+# # print(nuevo_usuario.__username) esto no se puede hacer porque es un atributo privado
+# print(nuevo_usuario.userName) # aca llamas al getter osea userName
+# """nuevo_usuario.userName = "Nico" #si le pasas parametros llamas al setter (eso se llama sobrecarga de metodos creo)"""""""""
+# """print(nuevo_usuario.userName)""" #si no manda parametros llama al getter
+
+# nueva_contraseña = input("Ingrese una contraseña\n") 
+# nuevo_usuario.password = nueva_contraseña 
+# print(nuevo_usuario.password)
+
+usuarios = []
+
+respuesta = ""
+
+print("Bienvenido!")
+
+username = input("\nIngrese su usuario: ")
+email = input("\nIngrese su mail: ")
+password = input("\nIngrese su contraseña: ")
+usuario = Usuario(username, email, password)
+
+nombre = input("\nIngrese su nombre: ")
+apellido = input("\nIngrese su apellido: ")
+
+usuario.nombre = nombre #aca esta usando el setter de nombre porque pide que ingreses datos despues de creado el objeto
+usuario.apellido = apellido
+
+respuesta = input("Queres dar de baja la cuenta?\n1 - Sipi\n2 - Jamasss")
+if respuesta == "1": #SI PONES UN INPUT EL NUMERO PONELO ENTRE COMILLAS PORQUE LO TOMA COMO STRING
+    usuario.estado = False
+    usuario.fecha_baja = date.today()
+
+usuarios.append(usuario)
+
+print("Ingrese sus credenciales")
+credencial_email = input("Email: ")
+credencial_contrasenia = input("Contraseña: ")
+
+usuario_indice = 0
+
+for i in usuarios:
+    usuario_indice = usuario_indice + 1
+    print (True) if credencial_email == i.email and credencial_contrasenia == i.contrasenia else print(False)
+    
 
