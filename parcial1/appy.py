@@ -10,7 +10,7 @@ def menu():
 
 def nueva_inscripcion():
     for i, carrera in enumerate(carreras):
-        print(f"{i + 1} - Carrera: {carrera.nombre}")
+        print(f"{i + 1} - Carrera: {carrera.nombre}") #carrera es del for y nombre la clase carrera
     index_carrera = int(input("Seleccione la carrera: "))
     c = carreras[index_carrera-1]
 

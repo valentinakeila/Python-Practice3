@@ -139,6 +139,6 @@ usuario_indice = 0
 
 for i in usuarios:
     usuario_indice = usuario_indice + 1
-    print (True) if credencial_email == i.email and credencial_contrasenia == i.contrasenia else print(False)
+    print (True) if credencial_email == i.email and credencial_contrasenia == i.password else print(False)
     
 
